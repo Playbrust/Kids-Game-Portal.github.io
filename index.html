@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Game Portal | 500+ Free Learning Games</title>
+    <meta name="description" content="The most fun educational games for kids! 500+ free interactive learning games for ages 3-12. Math, reading, science and puzzle games that make learning an adventure!">
+    
+    <!-- SEO Meta -->
+    <meta name="keywords" content="fun kids games, educational games, learning games, free online games for children, preschool games, elementary school games">
+    <link rel="canonical" href="https://yourwebsite.com" />
+    
+    <!-- Social Media Meta -->
+    <meta property="og:title" content="Kids Game Portal">
+    <meta property="og:description" content="500+ free educational games that make learning fun for kids!">
+    <meta property="og:image" content="https://yourwebsite.com/images/hero-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Fredoka+One&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Kids Game Portal",
+      "url": "https://yourwebsite.com",
+      "description": "Interactive educational games for children",
+      "applicationCategory": "EducationalGame",
+      "operatingSystem": "Web Browser",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student",
+        "ageRange": "3-12"
+      }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary: #D2B48C; /* Light brown - Tan */
+            --secondary: #8FBC8F; /* Sage green */
+            --accent: #FFD700; /* Gold */
+            --background: #FFF8DC; /* Cornsilk */
+            --text: #5D4037; /* Dark brown */
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Bubblegum Sans', cursive;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 10% 20%, rgba(210,180,140,0.1) 0%, rgba(143,188,143,0.1) 90%);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--primary);
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            animation: bounce 0.8s ease infinite alternate;
+        }
+
+        .subtitle {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Fun Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1200x400/8FBC8F/FFFFFF?text=Learning+Is+Fun!') center/cover;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 0 auto 30px;
+            max-width: 1000px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.7);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        #search {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border-radius: 50px;
+            border: 3px solid var(--accent);
+            font-size: 1.2rem;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D2B48C"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat 15px center;
+            background-size: 24px;
+        }
+
+        #search:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
+            transform: scale(1.02);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 10px;
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: 3px solid transparent;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+            border-color: var(--accent);
+        }
+
+        .game-icon-container {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-icon {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .game-card:hover .game-icon {
+            transform: scale(1.1);
+        }
+
+        .game-name {
+            padding: 15px;
+            font-weight: bold;
+            color: white;
+            background-color: var(--primary);
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .game-name::after {
+            content: 'PLAY NOW!';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            background: var(--accent);
+            color: var(--text);
+            font-size: 0.8rem;
+            padding: 3px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .game-card:hover .game-name::after {
+            opacity: 1;
+            bottom: 0;
+        }
+
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 40px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px;
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+
+        .spinner {
+            border: 8px solid rgba(143, 188, 143, 0.2);
+            border-radius: 50%;
+            border-top: 8px solid var(--secondary);
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 30px auto;
+        }
+
+        /* Fun Floating Characters */
+        .floating-char {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: var(--primary);
+            background: rgba(255,255,255,0.8);
+            border-radius: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 15px;
+            }
+            
+            .game-icon-container {
+                height: 140px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fun Floating Characters -->
+    <div class="floating-char" style="top: 10%; left: 5%;">🎮</div>
+    <div class="floating-char" style="top: 20%; right: 8%;">🧩</div>
+    <div class="floating-char" style="bottom: 15%; left: 7%;">🎲</div>
+    <div class="floating-char" style="bottom: 25%; right: 5%;">🎯</div>
+
+    <header>
+        <h1>Kids Game Portal</h1>
+        <p class="subtitle">Where Learning Feels Like Play!</p>
+        
+        <div class="hero">
+            <div class="hero-content">
+                <h2>500+ Awesome Learning Games!</h2>
+                <p>Discover the most fun way to learn with our collection of interactive games for kids ages 3-12.</p>
+                <p>Math • Reading • Science • Puzzles • and more!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search for games..." aria-label="Search games">
+    </div>
+
+    <div id="games-container">
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading awesome games...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2023 Kids Game Portal | <a href="/privacy" style="color: var(--secondary);">Privacy Policy</a></p>
+        <p>Made with ❤️ for kids who love to learn!</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Google Sheets CSV export URL
+            const csvUrl = 'https://docs.google.com/spreadsheets/d/1Rab3ElYa-_jIw8X5FoQB69MKdCmD9nf9jVKxnc058G0/export?format=csv';
+            
+            // First try to fetch directly
+            fetch(csvUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Direct fetch failed');
+                    }
+                    return response.text();
+                })
+                .then(csvData => {
+                    const games = parseCSV(csvData);
+                    displayGames(games);
+                    setupSearch(games);
+                    addFunEffects();
+                })
+                .catch(error => {
+                    console.log('Direct fetch failed, trying proxy method');
+                    return fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(csvUrl)}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const games = parseCSV(data.contents);
+                            displayGames(games);
+                            setupSearch(games);
+                            addFunEffects();
+                        })
+                        .catch(proxyError => {
+                            console.error('Both methods failed:', proxyError);
+                            showError();
+                        });
+                });
+
+            function parseCSV(csv) {
+                const lines = csv.split('\n');
+                const games = [];
+                
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    if (line) {
+                        const parts = line.includes('\t') ? line.split('\t') : line.split(',');
+                        if (parts.length >= 3) {
+                            games.push({
+                                name: parts[0].trim(),
+                                icon: parts[1].trim(),
+                                link: parts[2].trim(),
+                                category: parts[3] ? parts[3].trim() : 'Fun'
+                            });
+                        }
+                    }
+                }
+                
+                return games;
+            }
+
+            function displayGames(games) {
+                const container = document.getElementById('games-container');
+                
+                if (games.length === 0) {
+                    container.innerHTML = '<div class="no-results">No games found</div>';
+                    return;
+                }
+                
+                let html = '<div class="games-grid">';
+                
+                games.forEach(game => {
+                    const safeName = game.name.replace(/"/g, '&quot;');
+                    const emoji = getCategoryEmoji(game.category);
+                    html += `
+                        <div class="game-card" data-name="${safeName.toLowerCase()}" data-category="${game.category.toLowerCase()}">
+                            <div class="game-icon-container">
+                                <img src="${game.icon || 'https://via.placeholder.com/200?text=🎮'}" 
+                                     alt="${safeName}" 
+                                     class="game-icon"
+                                     onerror="this.src='https://via.placeholder.com/200?text=🎮'"
+                                     loading="lazy">
+                            </div>
+                            <div class="game-name">${emoji} ${safeName}</div>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+                container.innerHTML = html;
+                
+                // Add click event to all game cards
+                document.querySelectorAll('.game-card').forEach(card => {
+                    const gameName = card.getAttribute('data-name');
+                    const game = games.find(g => g.name.toLowerCase() === gameName);
+                    
+                    if (game) {
+                        card.addEventListener('click', () => {
+                            // Play fun sound effect
+                            playClickSound();
+                            // Open game after short delay for feedback
+                            setTimeout(() => {
+                                window.open(game.link, '_blank');
+                            }, 300);
+                        });
+                    }
+                });
+            }
+
+            function getCategoryEmoji(category) {
+                const emojis = {
+                    'math': '🧮',
+                    'reading': '📚',
+                    'science': '🔬',
+                    'puzzle': '🧩',
+                    'art': '🎨',
+                    'default': '🎮'
+                };
+                return emojis[category.toLowerCase()] || emojis.default;
+            }
+
+            function setupSearch(games) {
+                const searchInput = document.getElementById('search');
+                
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const filteredGames = games.filter(game => 
+                        game.name.toLowerCase().includes(searchTerm) || 
+                        game.category.toLowerCase().includes(searchTerm)
+                    );
+                    
+                    displayGames(filteredGames);
+                });
+            }
+
+            function showError() {
+                document.getElementById('games-container').innerHTML = `
+                    <div class="no-results">
+                        Oops! Couldn't load games right now. Try again soon!
+                    </div>
+                `;
+            }
+
+            function addFunEffects() {
+                // Add confetti effect to game cards on hover
+                document.querySelectorAll('.game-card').forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        card.style.background = `radial-gradient(circle at ${Math.random()*100}% ${Math.random()*100}%, 
+                            rgba(210,180,140,0.1), rgba(143,188,143,0.1))`;
+                    });
+                });
+            }
+
+            function playClickSound() {
+                // Simple sound effect using the Web Audio API
+                try {
+                    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+                    
+                    oscillator.type = 'sine';
+                    oscillator.frequency.value = 800;
+                    gainNode.gain.value = 0.1;
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    
+                    oscillator.start();
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+                    oscillator.stop(audioCtx.currentTime + 0.3);
+                } catch (e) {
+                    console.log('Audio not supported');
+                }
+            }
+        });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
